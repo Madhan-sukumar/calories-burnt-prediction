@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Calories Burnt Prediction  </title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
+
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Calories Burnt Prediction</h1>
+
+     <!-- Form to enter new data for predictions  -->
+    <form action="{{ url_for('predict')}}"method="POST">
+    
+       <input list="Gender" name="Gender" placeholder="gender" />
+       <datalist id="Gender">
+           <option value="Male">Male</option>
+           <option value="Female">Female</option>
+       </datalist><br>
+            
+    	<input type="text" name="Age" placeholder="age" required="required" /><br>
+        <input type="text" name="Height" placeholder="height" required="required" /><br>
+        <input type="text" name="Weight" placeholder="weight" required="required" /><br>
+        <input type="text" name="Duration" placeholder="duration" required="required" /><br>
+        <input type="text" name="Heart_Rate" placeholder="heart rate" required="required" /><br>
+        <input type="text" name="Body_Temp" placeholder="body temperature" required="required" /><br>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+     
+ </div>
+ {{pred}}
+
+</body>
+</html>
